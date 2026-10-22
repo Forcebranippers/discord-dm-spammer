@@ -1,0 +1,25 @@
+[discord]
+# paste your user token here (self-bot). NEVER commit the real one.
+token = "YOUR_USER_TOKEN_HERE"
+# seconds between each DM — keep >= 3 to avoid getting flagged
+delay_seconds = 4.5
+# jitter added on top of delay_seconds to look human
+jitter_seconds = 2.0
+
+[spam]
+# how many times to send the payload per target
+repeat = 1
+# optional: rotate through multiple message templates
+rotate_payloads = true
+# stop entire run after N consecutive failures
+max_consecutive_failures = 5
+
+[targets]
+# path to a newline-separated file of user IDs or @usernames
+source_file = "targets.txt"
+# skip users already messaged (uses state/messaged.sqlite3)
+skip_messaged = true
+
+[logging]
+level = "INFO"
+file = "logs/spammer.log"
